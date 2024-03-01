@@ -29,10 +29,15 @@ services:
 
   todo-database:
     image: mongo:6
-    #volumes: 
-    #  - database:/data/db
+    # Volume Mount
+    volumes: 
+      - database:/data/db
+    # Bind Mount
+    #volumes:
+     # - ./app:/usr/src/app
+     # - /usr/src/app/node_modules
     ports:
       - 27017:27017
 
-#volumes:
-  #database:
+volumes:
+  database:
